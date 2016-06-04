@@ -43,7 +43,7 @@ public class Inimigo : MonoBehaviour {
 		canAtack = true;
 	}
 	public void morrer(){
-		//FALTA A FUNÇAO DE ADICIONAR ESPECIAL AP PLAYER
+		//FALTA A FUNÇAO DE ADICIONAR ESPECIAL AO PLAYER
 		Destroy(this.gameObject);
 	}
 }
