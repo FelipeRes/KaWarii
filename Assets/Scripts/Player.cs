@@ -5,11 +5,11 @@ public class Player : MonoBehaviour {
 
 	public int vida;
 	public int especial;
+	public float velocity = 3f;
 	public Animator anim;
 
 	public Renderer capa;
 	public GameObject[] ataqueObject;
-	public int velocidade;
 	public int força;
 	public bool isWait;
 
@@ -30,24 +30,22 @@ public class Player : MonoBehaviour {
 	void Update () {
 		Vector3 v = Vector3.zero;
 
-		if (Input.GetMouseButtonDown (0)) {
-			Atack ();
-		}
 
 		if (!isWait) {
 			v = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
-			transform.Translate (v * Time.deltaTime);
+			transform.Translate (v * Time.deltaTime * velocity);
 		
 		}
-			Vector3 look = this.transform.position;
-			look.x += (Input.GetAxis ("Horizontal"));
-			look.z += (Input.GetAxis ("Vertical"));
-			lookPoint.transform.position = look;
-		if (v.x > 0.1f && v.x < - 0.1f) {
-				modelo.transform.LookAt (lookPoint);
-		} else if (v.z > 0.1f && v.z < - 0.1f) {
-				modelo.transform.LookAt (lookPoint);
-			}
+		Vector3 look = this.transform.position + v;
+		look.x += (Input.GetAxis ("Horizontal"));
+		look.z += (Input.GetAxis ("Vertical"));
+		lookPoint.transform.position = look;
+		modelo.transform.LookAt (lookPoint);
+
+		if (Input.GetMouseButtonDown (0)) {
+			Atack ();
+		}
+			
 		}
 
 	public void PodeAtacar(){
@@ -64,7 +62,8 @@ public class Player : MonoBehaviour {
 		if (canAtack && atackCount < ataqueObject.Length) {
 			isWait = true;
 			GameObject ataqueInstancia = Instantiate (ataqueObject [atackCount], ataquePoint.position, Quaternion.identity) as GameObject;
-			anim.Play (ataqueInstancia.GetComponent<Ataque>().animatorPlay);
+			ataqueInstancia.GetComponent<Ataque> ().player = this.gameObject;
+			//anim.Play (ataqueInstancia.GetComponent<Ataque>().animatorPlay);
 			Invoke ("Return", tempo);
 			canAtack = false;
 			Invoke ("PodeAtacar", tempo);
