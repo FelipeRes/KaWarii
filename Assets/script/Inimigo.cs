@@ -5,6 +5,7 @@ public class Inimigo : MonoBehaviour {
 	public int 			vida;
 	public GameObject 	player;
 	public GameObject 	ataque;
+	public Transform ataquePoint; 
 	public int 			velocidade;
 	public float 		alcanceDeAtaque;
 	public float 		distancia;
@@ -15,7 +16,7 @@ public class Inimigo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find ("player");
+		player = GameObject.Find("Player");
 	}
 	
 	// Update is called once per frame
@@ -37,7 +38,7 @@ public class Inimigo : MonoBehaviour {
 	public void atacar(){
 		canAtack = false;
 		Debug.Log ("atacou");
-		Instantiate (ataque);
+		GameObject ataque_Instance = Instantiate (ataque, ataquePoint.position, Quaternion.identity) as GameObject;
 	}
 	public void podeAtacar(){
 		canAtack = true;
