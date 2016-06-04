@@ -73,5 +73,7 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-
+	public void adicionarDano(int dano){
+		vida -= dano;
+	}
 }
