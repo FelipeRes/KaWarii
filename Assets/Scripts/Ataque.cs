@@ -7,7 +7,7 @@ public class Ataque : MonoBehaviour {
 	public float tempo;
 	public float tempoCombo;
 	public bool tempoOk;
-	public Player player;
+	public GameObject player;
 	public string animatorPlay;
 
 	private float tempoDecorrido;
@@ -23,7 +23,7 @@ public class Ataque : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider coll){
 		if (coll.gameObject.GetComponent<Inimigo> () != null) {
-			coll.gameObject.GetComponent<Inimigo> ().adicionarDano(forca);
+			coll.gameObject.GetComponent<Inimigo> ().adicionarDano(forca * player.GetComponent<Player>().força);
 		}
 	}
 }
