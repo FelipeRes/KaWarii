@@ -2,26 +2,22 @@
 using System.Collections;
 
 public class AtaqueDoInimigo : MonoBehaviour {
-	public int forca;
-	public float tempo;
-	public float tempoDecorrido;
-	public Inimigo inimigo;
+	public float 	tempoDeDuraçao;
+	public int		dano;
+	public int 		velocidade;
 	void Start () {
-
+		Destroy (this.gameObject, tempoDeDuraçao);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		tempoDecorrido += Time.deltaTime;
-		if (tempoDecorrido >= tempo) {
-			inimigo.podeAtacar ();
-			Destroy(this.gameObject);
-		}
+		transform.Translate (Vector3.forward * velocidade * Time.deltaTime);
 	
 	}
 	void OnTriggerEnter(Collider coll){
 		if (coll.gameObject.GetComponent<Player> () != null) {
-			coll.gameObject.GetComponent<Player> ().adicionarDano (forca);
+			coll.gameObject.GetComponent<Player> ().adicionarDano (dano);
+			Destroy (this.gameObject);
 		}
 	}
 
