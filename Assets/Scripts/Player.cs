@@ -75,7 +75,11 @@ public class Player : MonoBehaviour {
 	
 	}
 	public void curar(int lixeiro){
-		vida += lixeiro;
+		vidaCount += lixeiro;
+		if (vida < vidaCount) {
+			vidaCount = vida;
+		}
+	
 	}
 	public void Atack(){
 		if (canAtack && atackCount < ataqueObject.Length) {
