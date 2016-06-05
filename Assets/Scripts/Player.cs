@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
 	public float tempo;
 
 	public Transform ataquePoint;
-
+	public ParticleSystem particle;
 
 	void Start () {
 		//anim = this.GetComponent<Animator> ();
@@ -33,6 +33,8 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update () {
+		particle.emissionRate = (int)(vida - vidaCount);
+		particle.maxParticles = (int)(vida - vidaCount);
 		if (!isWait) {
 			Vector3 v = Vector3.zero;
 			if (canAtack) {
@@ -50,11 +52,9 @@ public class Player : MonoBehaviour {
 					anim.SetBool ("Walk", false);
 				}
 			}
-
-			if (Input.GetMouseButtonDown (0)) {
-				Atack ();
-			}
-
+		}
+		if (Input.GetMouseButtonDown (0)) {
+			Atack ();
 		}
 
 		}
@@ -87,14 +87,14 @@ public class Player : MonoBehaviour {
 			Invoke ("Return", ataque.tempo);
 			canAtack = false;
 			Invoke ("PodeAtacar",  ataque.tempoCombo);
-			//atackCount++;
+			atackCount++;
 			Invoke ("ZerarAtackCount", tempo);
 		}
 	}
 
 	public void adicionarDano(int dano){
-		isWait = true;
-		Invoke ("Return",dano);
+		//isWait = true;
+		//Invoke ("Return",dano/2);
 		if (vidaCount > 0) {
 			vidaCount -= dano;
 		}

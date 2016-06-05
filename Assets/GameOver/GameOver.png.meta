@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: 23465870035f2484eb9d9ade0c0e8381
+timeCreated: 1465152594
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: GameOver_0
+    21300002: GameOver_1
+    21300004: GameOver_4
+    21300006: GameOver_5
+    21300008: GameOver_9
+    21300010: GameOver_10
+    21300012: GameOver_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    sprites:
+    - name: GameOver_1
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 661
+        width: 697
+        height: 375
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.9878845, y: -11.649475}
+        - {x: 2.9878845, y: 8.350525}
+        - {x: 2.9878845, y: 13.350525}
+        - {x: 2.9878845, y: 11.350525}
+        - {x: 3.9878845, y: 6.350525}
+        - {x: 21.987885, y: 4.350525}
+        - {x: 41.987885, y: 16.350525}
+        - {x: 72.987885, y: 1.3505249}
+        - {x: 148.98788, y: 2.350525}
+        - {x: 175.98788, y: 8.350525}
+        - {x: 175.98788, y: 82.350525}
+        - {x: 173.98788, y: 98.350525}
+        - {x: -82.012115, y: 98.350525}
+        - {x: -67.012115, y: 74.350525}
+        - {x: -85.012115, y: 32.350525}
+        - {x: -92.012115, y: 18.350525}
+        - {x: -91.012115, y: 3.350525}
+        - {x: -83.012115, y: -2.649475}
+        - {x: -72.012115, y: -3.649475}
+        - {x: -61.012115, y: 9.350525}
+        - {x: -61.012115, y: -1.6494751}
+        - {x: -83.012115, y: -8.649475}
+        - {x: -100.012115, y: 11.350525}
+        - {x: -93.012115, y: 18.350525}
+        - {x: -81.012115, y: 42.350525}
+        - {x: -83.012115, y: 60.350525}
+        - {x: -100.012115, y: 93.350525}
+        - {x: -112.012115, y: 98.350525}
+        - {x: -180.01212, y: 98.350525}
+        - {x: -180.01212, y: -96.649475}
+        - {x: 104.987885, y: -96.649475}
+        - {x: 103.987885, y: -15.649475}
+        - {x: 65.987885, y: 2.350525}
+        - {x: 34.987885, y: -2.649475}
+      - - {x: 94.987885, y: 0.3505249}
+        - {x: 94.987885, y: -81.649475}
+        - {x: 107.987885, y: -87.649475}
+        - {x: 170.98788, y: -87.649475}
+        - {x: 181.98788, y: -53.649475}
+        - {x: 181.98788, y: 0.3505249}
+    - name: GameOver_5
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 398
+        width: 403
+        height: 639
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3.772728, y: 47.83435}
+        - {x: -94.22727, y: 47.83435}
+        - {x: -104.22727, y: 40.83435}
+        - {x: -104.22727, y: -76.16565}
+        - {x: 0.77272797, y: -165.16565}
+        - {x: 99.77273, y: -165.16565}
+        - {x: 104.77273, y: -139.16565}
+        - {x: 104.77273, y: -56.16565}
+        - {x: 64.77273, y: 0.8343506}
+      - - {x: -46.227272, y: 162.83435}
+        - {x: -50.227272, y: 155.83435}
+        - {x: -72.22727, y: 115.83435}
+        - {x: -72.22727, y: 91.83435}
+        - {x: -71.22727, y: 85.83435}
+        - {x: -33.227272, y: 64.83435}
+        - {x: 2.772728, y: 64.83435}
+        - {x: 20.772728, y: 73.83435}
+        - {x: 20.772728, y: 144.83435}
+        - {x: 16.772728, y: 162.83435}
+    - name: GameOver_9
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 407
+        width: 455
+        height: 650
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 102.25763, y: 39.98889}
+        - {x: 76.25763, y: 43.98889}
+        - {x: -4.7423706, y: 43.98889}
+        - {x: -57.74237, y: 12.988892}
+        - {x: -113.74237, y: -63.01111}
+        - {x: -117.74237, y: -97.01111}
+        - {x: -117.74237, y: -128.01111}
+        - {x: -100.74237, y: -148.01111}
+        - {x: -71.74237, y: -168.01111}
+        - {x: -31.74237, y: -168.01111}
+        - {x: -21.74237, y: -166.01111}
+        - {x: 115.25763, y: -98.01111}
+        - {x: 119.25763, y: -83.01111}
+        - {x: 119.25763, y: 16.988892}
+      - - {x: 5.2576294, y: 164.98889}
+        - {x: -21.74237, y: 164.98889}
+        - {x: -34.74237, y: 149.98889}
+        - {x: -38.74237, y: 128.98889}
+        - {x: -38.74237, y: 59.98889}
+        - {x: 63.25763, y: 59.98889}
+        - {x: 72.25763, y: 81.98889}
+        - {x: 72.25763, y: 130.98889}
+        - {x: 59.25763, y: 140.98889}
+    - name: GameOver_10
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 653
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: GameOver_11
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 35
+        width: 326
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 55.80609, y: -11.898987}
+        - {x: 54.80609, y: -14.898987}
+        - {x: 53.80609, y: -19.898987}
+        - {x: 61.80609, y: -24.898987}
+        - {x: 85.80609, y: -3.8989868}
+        - {x: 85.80609, y: 150.10101}
+        - {x: 15.806091, y: 150.10101}
+        - {x: -65.19391, y: 115.10101}
+        - {x: -84.19391, y: 86.10101}
+        - {x: -84.19391, y: 27.101013}
+        - {x: -77.19391, y: -38.898987}
+        - {x: -42.19391, y: -149.89899}
+        - {x: -18.193909, y: -149.89899}
+        - {x: -13.193909, y: -148.89899}
+        - {x: -8.193909, y: -141.89899}
+        - {x: -8.193909, y: -133.89899}
+        - {x: 2.8060913, y: -149.89899}
+        - {x: 41.80609, y: -149.89899}
+        - {x: 71.80609, y: -32.898987}
+        - {x: 60.80609, y: -27.898987}
+        - {x: 49.80609, y: -29.898987}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
