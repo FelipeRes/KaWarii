@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public int vidaCount;
-	public int vida;
+	public float vidaCount;
+	public float vida;
 	public int espcialCount;
 	public int especial;
 	public float velocity = 3f;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour {
 	public float tempo;
 
 	public Transform ataquePoint;
-	
+
 
 	void Start () {
 		//anim = this.GetComponent<Animator> ();
@@ -73,6 +73,9 @@ public class Player : MonoBehaviour {
 	public void AdicionarEspecial(int valor){
 		especial += valor;
 	
+	}
+	public void curar(int lixeiro){
+		vida += lixeiro;
 	}
 	public void Atack(){
 		if (canAtack && atackCount < ataqueObject.Length) {
