@@ -13,6 +13,9 @@ public class PowerUp : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter(Collider coll){
-		coll.gameObject.GetComponent<Player>.curar (curaDeVida);
+		if (coll.gameObject.GetComponent<Player> () != null) {
+			coll.gameObject.GetComponent<Player> ().curar (curaDeVida);
+			Destroy (this.gameObject);
+		}
 	}
 }
