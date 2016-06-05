@@ -3,7 +3,9 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+	public int vidaCount;
 	public int vida;
+	public int espcialCount;
 	public int especial;
 	public float velocity = 3f;
 	public Animator anim;
@@ -22,57 +24,77 @@ public class Player : MonoBehaviour {
 	public float tempo;
 
 	public Transform ataquePoint;
+	
 
 	void Start () {
-		anim = this.GetComponent<Animator> ();
+		//anim = this.GetComponent<Animator> ();
+		vidaCount = vida;
+		espcialCount = 0;
 	}
 
 	void Update () {
-		Vector3 v = Vector3.zero;
-
-
 		if (!isWait) {
-			v = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
-			transform.Translate (v * Time.deltaTime * velocity);
-		
-		}
-		Vector3 look = this.transform.position + v;
-		look.x += (Input.GetAxis ("Horizontal"));
-		look.z += (Input.GetAxis ("Vertical"));
-		lookPoint.transform.position = look;
-		modelo.transform.LookAt (lookPoint);
+			Vector3 v = Vector3.zero;
+			if (canAtack) {
+				v = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
+				this.transform.Translate (v*velocity*Time.deltaTime);
+				Vector3 look = this.transform.position + v;
+				look.x += (Input.GetAxis ("Horizontal"));
+				look.z += (Input.GetAxis ("Vertical"));
+				lookPoint.transform.position = look;
+				modelo.transform.LookAt (lookPoint);
 
-		if (Input.GetMouseButtonDown (0)) {
-			Atack ();
+				if (v.x > 0.1 || v.x < -0.1 || v.z > 0.1 || v.z < -0.1) {
+					anim.SetBool ("Walk", true);
+				} else {
+					anim.SetBool ("Walk", false);
+				}
+			}
+
+			if (Input.GetMouseButtonDown (0)) {
+				Atack ();
+			}
+
 		}
-			
+
 		}
 
 	public void PodeAtacar(){
 		canAtack = true;
 	}
-
 	public void Return(){
 		isWait = false;
 	}
 	public void ZerarAtackCount(){
-		atackCount = 0;
+		if (canAtack == true) {
+			atackCount = 0;
+		}
+	}
+	public void AdicionarEspecial(int valor){
+		especial += valor;
+	
 	}
 	public void Atack(){
 		if (canAtack && atackCount < ataqueObject.Length) {
 			isWait = true;
-			GameObject ataqueInstancia = Instantiate (ataqueObject [atackCount], ataquePoint.position, Quaternion.identity) as GameObject;
-			ataqueInstancia.GetComponent<Ataque> ().player = this.gameObject;
-			//anim.Play (ataqueInstancia.GetComponent<Ataque>().animatorPlay);
-			Invoke ("Return", tempo);
+			GameObject ataqueInstancia = Instantiate (ataqueObject [atackCount], ataquePoint.position, ataquePoint.transform.rotation) as GameObject;
+			Ataque ataque = ataqueInstancia.GetComponent<Ataque> ();
+			ataque.player = this.gameObject;
+			anim.Play (ataqueInstancia.GetComponent<Ataque>().animatorPlay);
+			Invoke ("Return", ataque.tempo);
 			canAtack = false;
-			Invoke ("PodeAtacar", tempo);
-			atackCount++;
+			Invoke ("PodeAtacar",  ataque.tempoCombo);
+			//atackCount++;
 			Invoke ("ZerarAtackCount", tempo);
 		}
 	}
 
 	public void adicionarDano(int dano){
-		vida -= dano;
+		isWait = true;
+		Invoke ("Return",dano);
+		if (vidaCount > 0) {
+			vidaCount -= dano;
+		}
+		espcialCount -= 10;
 	}
 }
