@@ -28,13 +28,11 @@ public class Inimigo : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//isRunnnig sempre comeca false mais se ele se mover fica true
-		//anim.SetBool ("isRunning", false);
 		if (!isWait) {
 			transform.LookAt (player.transform.position);
 			distancia = Vector3.Distance (this.transform.position, player.transform.position);
 			if (distancia > alcanceDeAtaque) {
 				transform.Translate (Vector3.forward * velocidade * Time.deltaTime);
-				//anim.SetBool ("isRunning", true);
 			} else if (distancia <= alcanceDeAtaque && canAtack) {
 				atacar ();
 			}
@@ -50,12 +48,14 @@ public class Inimigo : MonoBehaviour {
 		Destroy (bloodObject, 5);
 		Debug.Log (dano);
 		vida = vida - dano;
+		anim.SetBool ("OnGround", false);
+		anim.Play ("Damage");
 		if (vida <= 0) {
 			morrer ();
 		}
 	}
 	public virtual void atacar(){
-		//anim.Play ("atacando");
+		anim.Play ("Damage");
 		canAtack = false;
 		Debug.Log ("atacou");
 		Invoke ("podeAtacar", tempoDeAtaque);
@@ -70,5 +70,10 @@ public class Inimigo : MonoBehaviour {
 	}
 	void Return(){
 		isWait = false;
+	}
+	void OnCollisionEnter(Collision coll){
+		if (coll.gameObject.tag == "Ground") {
+			anim.SetBool ("OnGround", true);
+		}
 	}
 }

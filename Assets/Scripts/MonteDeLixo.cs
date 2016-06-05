@@ -29,6 +29,7 @@ public class MonteDeLixo : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider coll){
 		if (coll.gameObject.GetComponent<Ataque>() != null) {
+			Debug.Log ("OI");
 			esplosao ();
 		}
 	}
