@@ -12,6 +12,7 @@ public class Ataque : MonoBehaviour {
 
 	private float tempoDecorrido;
 
+
 	void Start () {
 	
 	}
