@@ -15,10 +15,10 @@ public class Otome : Inimigo {
 			transform.LookAt (player.transform.position);
 			distancia = Vector3.Distance (this.transform.position, player.transform.position);
 			if (distancia < distanciaDeFuga) {
-				transform.Translate (Vector3.back * velocidade * Time.deltaTime);
-			}else if (distancia > alcanceDeAtaque) {
-				transform.Translate (Vector3.forward * velocidade * Time.deltaTime);
-			} else if (distancia <= alcanceDeAtaque && canAtack) {
+				//transform.Translate (Vector3.back * velocidade * Time.deltaTime);
+			} else if (distancia > alcanceDeAtaque) {
+				//transform.Translate (Vector3.forward * velocidade * Time.deltaTime);
+			}  else if (distancia <= alcanceDeAtaque && canAtack) {
 				atacar ();
 			}
 		}
