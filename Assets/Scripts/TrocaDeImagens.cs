@@ -18,15 +18,15 @@ public class TrocaDeImagens : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if (Input.GetKeyDown (KeyCode.RightArrow)) {
-			cont++;
+		if (Input.GetMouseButtonDown(0)) {
 			tela.overrideSprite = imagens [cont];
 			textoNaTela.text = textos [cont];
-			if (cont > 4) {
-				UnityEngine.Application.LoadLevel ("naosei");
+			cont++;
+			if (cont > 6) {
+				Application.LoadLevel (2);
 			}
 			
-		} else if (Input.GetKeyDown (KeyCode.LeftArrow) && cont > 0) {
+		} else if (Input.GetMouseButtonDown(0)&& cont > 0) {
 			cont--;
 			tela.sprite = imagens [cont];
 			textoNaTela.text = textos [cont];

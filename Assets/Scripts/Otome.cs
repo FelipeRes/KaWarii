@@ -7,6 +7,7 @@ public class Otome : Inimigo {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
+		audi.enabled =false;
 	}
 	
 	// Update is called once per frame

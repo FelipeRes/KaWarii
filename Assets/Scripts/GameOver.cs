@@ -15,8 +15,12 @@ public class GameOver : MonoBehaviour {
 		}
 	}
 
+	public void Reload(){
+		Application.LoadLevel (2);
+	}
 
 	public void CallGameOver(){
 		gameOverScreen.SetActive (true);
+		Invoke ("Reload",5);
 	}
 }
