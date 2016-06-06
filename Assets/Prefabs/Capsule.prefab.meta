@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Capsule.prefab.meta
+guid: 536441ae8e1abbf4fa3332909ea4835c
+timeCreated: 1465126652
+=======
 guid: 2bc40b098c777804684c8ff10cf9782d
 timeCreated: 1465127253
+>>>>>>> 7d2a1061f787ed7195a75d6f742ad805b6b31c20:Assets/Prefabs/Capsule.prefab.meta
 licenseType: Free
 NativeFormatImporter:
   userData: 
