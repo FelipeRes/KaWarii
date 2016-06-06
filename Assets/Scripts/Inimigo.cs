@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 using System.Collections;
 
 public class Inimigo : MonoBehaviour {
@@ -15,14 +16,15 @@ public class Inimigo : MonoBehaviour {
 	public float 		tempoDeAtaque;
 	public float 		tempoDeRecuperacao;
 	public Animator 	anim;
-
-
+	public AudioSource 	audi;
+	public GameObject audioO;
 	public bool isWait;
 
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
+		audi.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -40,6 +42,8 @@ public class Inimigo : MonoBehaviour {
 		}
 	}
 	public void adicionarDano(int dano){
+		audi.enabled = true;
+		audi.Play ();
 		player.GetComponent<Player> ().AdicionarEspecial (1);
 		isWait = true;
 		Invoke ("Return", tempoDeRecuperacao);
@@ -66,6 +70,7 @@ public class Inimigo : MonoBehaviour {
 		canAtack = true;
 	}
 	public void morrer(){
+		audioO.transform.parent = null;
 		Destroy(this.gameObject);
 	}
 	void Return(){
